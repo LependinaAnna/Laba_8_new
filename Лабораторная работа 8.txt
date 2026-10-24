@@ -1,0 +1,149 @@
+#define _CRT_SECURE_NO_DEPRECATE
+#define _USE_MATH_DEFINES 
+#include <locale.h>
+#include <stdio.h>
+#include <math.h>
+int z_0(int n0);
+int z_00(int n1);
+int z_000(int N, char symbol_1, char symbol_2);
+int z_1(int n, int m);
+int z_1a(int M);
+double z_2(double x);
+
+int main() 
+{
+    setlocale(LC_ALL, "RUS");
+    
+
+    int n0, result_0;
+    puts("Введите число");
+    scanf("%d", &n0);
+    result_0 = z_0(n0);
+    for (result_0; result_0 <= n0; result_0++) putchar ('*');
+    puts("\n");
+    printf("+++");
+    for (int start = 1; start <= n0; start++) putchar ('*');
+    
+
+    int n1, result_00;
+    puts("\n\nВведите число");
+    scanf("%d", &n1);
+    result_00 = z_00(n1);
+    for (result_00; result_00 <= n0; result_00++) putchar ('*');
+    for (int start = 1; start <= n1; start++) putchar ('+');
+    
+
+    int N, res_0;
+    char symbol_1, symbol_2;
+    puts("\n\nВведите количество символов");
+    scanf("%d", &N);
+    puts("Введите два символа через пробел");
+    scanf(" %c %c", &symbol_1, &symbol_2);
+    res_0 = z_000(N, symbol_1, symbol_2);
+    putchar('+');
+    for (int i = 0; i < N; i++)
+    {
+        if (res_0)
+            putchar(symbol_1);
+        else
+            putchar(symbol_2);
+
+        putchar('!');
+    }
+    putchar('+');
+    
+ 
+    int n, m, result_1, s, k;
+    printf("\n\nВведите значения m и n (m >= n)");
+    scanf("%d %d", &m, &n);
+    result_1 = z_1(n, m);
+    k = 1;
+    for (m; m >= n; m--)
+    {   
+        result_1 += m;
+        printf("\nВыполнено %d раз", k++);
+    }
+    printf("\nРезультат: %d\n", result_1);
+    
+
+    int M, result_1a;
+    double step = 1.;
+    puts("\n\nВведите целое число m");
+    scanf("%d", &M);
+    result_1a = z_1a(M);
+    for (result_1a; step <= M; result_1a++)
+    {
+        printf("2^%-d = %.0f\n", result_1a, step);
+        step *= 2;
+    }
+    printf("Результат: %.6fK\n\n", (float) M / 1024.0);
+    
+    
+    double h, result_2, x, y;
+    puts("Функция y = x^3 - 4x^2 + 2");
+    puts("Введите шаг табуляции");
+    scanf("%lf", &h);
+    if (h < 0.0)
+    {
+        puts("\n     x     |     f(x)\n");
+        puts("--------------------------\n");
+        x = 1;
+        result_2 = z_2(x);
+        printf("%8.3f   |%10.3f\n", x, result_2);
+        puts("Достигнута минимальная граница диапазона, дальнейшее вычисление невозможно");
+    }
+    else 
+    {
+        puts("\n     x     |     f(x)\n");
+        puts("--------------------------\n");
+        for (x = 1.0; x <= 3 + h / 1000000.0; x += h)
+        {
+            result_2 = z_2(x);
+            printf("%8.3f   |%10.3f\n", x, result_2);
+            
+        }
+    }
+    
+    return 0;
+}
+
+int z_0(int n0)
+{
+    int start = 1;
+    return start;
+}
+
+int z_00(int n1)
+{
+    int start_2 = 1;
+    return start_2;
+}
+
+int z_000(int N, char symbol_1, char symbol_2)
+{
+    int r;
+    int i = 0;
+    r = i < (N + 1) / 2;
+    return r;
+}
+
+int z_1(int n, int m)
+{
+    int s;
+    s = 0;
+    return s;
+}
+
+int z_1a(int M)
+{
+    int n;
+    n = 0;
+    return n;
+}
+
+double z_2(double x)
+{
+    double y;
+    y = pow(x, 3.) - 4 * pow(x, 2.) + 2;
+    return y;
+}

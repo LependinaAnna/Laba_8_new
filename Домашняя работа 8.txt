@@ -1,0 +1,48 @@
+Домашнее задание вариант 16. 
+Условие задачи 16. Вычислите с использованием цикла for значение для заданного целого n : 1 - 1/2 + 1/4 - 1/8 + ... + (-1)^n*(1/2^n)
+
+1. Алгоритм.
+Начало 
+Определить и ввести константы:
+1) n - какое-то целое число 
+Учитывая введённые данные, высчитать значение выражения.
+Вывести результат.
+Конец
+
+2. Блок-схема алгоритма. Ссылка: в draw.io^ https://drive.google.com/file/d/1-XNsYmggf8mQpUDhDKl1-bTBX4it6VC9/view?usp=sharing
+
+3. Реализация программы.
+#define _CRT_SECURE_NO_DEPRECATE
+#define _USE_MATH_DEFINES 
+#include <locale.h>
+#include <stdio.h>
+#include <math.h>
+double homework(int i);
+
+int main()
+{
+    setlocale(LC_ALL, "RUS");
+
+    int n;
+    double result, sum;
+    puts("Введите целое число n (n >= 0)");
+    scanf("%d", &n);
+    sum = 0.;
+    for (int i = 0; i <= n; i++) 
+    {
+        result = homework(i);
+        sum += result;
+    }
+    printf("Значение выражения при n = %d равно: %.6f\n", n, sum);
+    return 0;
+}    
+
+double homework(int i)
+{
+    double num;
+    num = pow(-1, i) * (1. / pow(2, i));
+    return num;
+}
+
+4. Информация о разработчике: Лепендина Анна группа бИД-261 
+
